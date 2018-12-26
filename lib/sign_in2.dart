@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_word/sign_in.dart';
 
-class sign_in2 extends StatelessWidget {
+class signIn2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -19,6 +19,7 @@ class sign2 extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
+        elevation: 0.0,
         centerTitle: true,
         title: Text(
           '注册',
@@ -30,7 +31,7 @@ class sign2 extends StatelessWidget {
           color: Colors.black,
           onPressed: () {
             Navigator.push(context,
-                new MaterialPageRoute(builder: (context) => new sign_in()));
+                new MaterialPageRoute(builder: (context) => new signIn()));
           },
         ),
         actions: <Widget>[
@@ -56,54 +57,131 @@ class sign2 extends StatelessWidget {
                     padding: EdgeInsets.all(0),
                     child: Column(
                       children: <Widget>[
-                        Container(
-                          margin: EdgeInsets.only(top: 10, bottom: 20),
+                        new Container(
+                          margin: EdgeInsets.only(top: 10, bottom: 10),
                           padding: EdgeInsets.only(
-                              left: 20, right: 20, top: 10, bottom: 10),
+                              left: 15, right: 15, top: 10, bottom: 10),
                           child: Column(
                             children: <Widget>[
-                              TextField(
-                                keyboardType: TextInputType.text,
-                                decoration: InputDecoration(
-                                  icon: Text(
-                                    '商家名称    ',
-                                    style: TextStyle(
-                                        fontSize: 18, color: Colors.black),
-                                  ),
-                                  hintText: "请输入名称",
-                                  hintStyle: TextStyle(
-                                      fontSize: 18,
-                                      color: Color.fromRGBO(204, 204, 204, 1)),
+                              new Container(
+                                width: MediaQuery.of(context).size.width,
+                                child: Row(
+                                  children: <Widget>[
+                                    Container(
+                                      width: 80,
+                                      padding: EdgeInsets.only(top: 5),
+                                      child: Text(
+                                        '商家名称',
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontFamily: "PingFang",
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: MediaQuery.of(context).size.width -
+                                          110,
+                                      padding:
+                                          EdgeInsets.only(right: 0, left: 0),
+                                      height: 50,
+                                      child: TextField(
+                                        controller: null,
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 18),
+                                        keyboardType: TextInputType.number,
+                                        decoration: InputDecoration(
+                                          hintText: '填写商铺名称',
+                                          hintStyle: TextStyle(
+                                              fontSize: 18,
+                                              fontFamily: "PingFang",
+                                              color: Color.fromRGBO(
+                                                  204, 204, 204, 1)),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              TextField(
-                                keyboardType: TextInputType.text,
-                                obscureText: true,
-                                decoration: InputDecoration(
-                                  icon: Text(
-                                    '商家地址    ',
-                                    style: TextStyle(
-                                        fontSize: 18, color: Colors.black),
-                                  ),
-                                  hintText: "请输入地址",
-                                  hintStyle: TextStyle(
-                                      fontSize: 18,
-                                      color: Color.fromRGBO(204, 204, 204, 1)),
+                              new Container(
+                                width: MediaQuery.of(context).size.width,
+                                child: Row(
+                                  children: <Widget>[
+                                    Container(
+                                      width: 80,
+                                      padding: EdgeInsets.only(top: 5),
+                                      child: Text(
+                                        '商家地址',
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontFamily: "PingFang",
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: MediaQuery.of(context).size.width -
+                                          110,
+                                      padding:
+                                          EdgeInsets.only(right: 0, left: 0),
+                                      height: 50,
+                                      child: TextField(
+                                        controller: null,
+                                        style: TextStyle(
+                                            color: Colors.black, fontSize: 18),
+                                        keyboardType: TextInputType.number,
+                                        decoration: InputDecoration(
+                                          hintText: '商家地址',
+                                          hintStyle: TextStyle(
+                                              fontSize: 18,
+                                              fontFamily: "PingFang",
+                                              color: Color.fromRGBO(
+                                                  204, 204, 204, 1)),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              TextField(
-                                keyboardType: TextInputType.text,
-                                obscureText: true,
-                                decoration: InputDecoration(
-                                  icon: Text(
-                                    '联系人姓名',
-                                    style: TextStyle(
-                                        fontSize: 18, color: Colors.black),
-                                  ),
-                                  hintText: "请输入联系人名称",
-                                  hintStyle: TextStyle(
-                                      fontSize: 18,
-                                      color: Color.fromRGBO(204, 204, 204, 1)),
+                              new Container(
+                                width: MediaQuery.of(context).size.width,
+                                child: Row(
+                                  children: <Widget>[
+                                    Container(
+                                      width: 80,
+                                      padding: EdgeInsets.only(top: 5),
+                                      child: Text(
+                                        '联系人',
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                          fontFamily: "PingFang",
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: MediaQuery.of(context).size.width -
+                                          110,
+                                      padding:
+                                          EdgeInsets.only(right: 0, left: 0),
+                                      height: 50,
+                                      child: TextField(
+                                        controller: null,
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                        ),
+                                        keyboardType: TextInputType.number,
+                                        decoration: InputDecoration(
+                                          hintText: '填写联系人',
+                                          hintStyle: TextStyle(
+                                              fontSize: 18,
+                                              fontFamily: "PingFang",
+                                              color: Color.fromRGBO(
+                                                  204, 204, 204, 1)),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
@@ -113,23 +191,23 @@ class sign2 extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 42),
+                    padding: EdgeInsets.only(top: 90),
                     alignment: Alignment.center,
                     child: RaisedButton(
                       onPressed: () {
                         //todo 注册方法
                       },
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
                       ),
-                      elevation: 4.0,
+                      elevation: 2.0,
                       color: Color.fromRGBO(255, 239, 63, 1),
-                      padding: EdgeInsets.fromLTRB(160, 11, 160, 11),
+                      padding: EdgeInsets.fromLTRB(165, 15, 165, 15),
                       child: Text(
                         '注册',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 22,
                         ),
                       ),
                     ),
