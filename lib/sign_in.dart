@@ -248,9 +248,10 @@ class signInPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.only(top: 42),
-                    alignment: Alignment.center,
+                  new Container(
+                    width: MediaQuery.of(context).size.width*0.85,
+                    height:MediaQuery.of(context).size.height*0.07,
+                    margin: EdgeInsets.only(top: MediaQuery.of(context).size.width*0.055),
                     child: RaisedButton(
                       onPressed: () {
                         Navigator.push(
@@ -260,11 +261,10 @@ class signInPage extends StatelessWidget {
                         //todo 携带参数传递到下个页面
                       },
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
                       ),
                       elevation: 4.0,
                       color: Color.fromRGBO(255, 239, 63, 1),
-                      padding: EdgeInsets.fromLTRB(160, 11, 160, 11),
                       child: Text(
                         '下一步',
                         style: TextStyle(
@@ -274,7 +274,7 @@ class signInPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Container(
+                  new Container(
                     padding: EdgeInsets.only(top: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

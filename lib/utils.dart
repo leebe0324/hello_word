@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-getCouponContainer(var coupon, var time, var name, var getCount, var useCount) {
+getCouponContainer(var coupon, var time, var name, var getCount, var useCount,BuildContext context) {
   var images = '';
   var daijin = 'images/quan-daijin.png';
   var lipin = 'images/quan-lipin.png';
@@ -21,8 +21,8 @@ getCouponContainer(var coupon, var time, var name, var getCount, var useCount) {
       break;
   }
   return new Container(
-    height: 95,
-    width: 400,
+    height: MediaQuery.of(context).size.height*0.13,
+    width: MediaQuery.of(context).size.width*0.97,
     margin: EdgeInsets.only(left: 5, top: 5, right: 5),
     decoration: BoxDecoration(
       image: DecorationImage(image: AssetImage('$images'), fit: BoxFit.fill),
@@ -31,7 +31,7 @@ getCouponContainer(var coupon, var time, var name, var getCount, var useCount) {
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         Container(
-          padding: EdgeInsets.only(left: 120, top: 15),
+          padding: EdgeInsets.only(left: 100, top: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[

@@ -3,6 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hello_word/sign_in.dart';
 import 'package:hello_word/index.dart';
 import 'dart:io';
+import 'package:device_info/device_info.dart';
 
 void main() => runApp(loginApp());
 
@@ -30,9 +31,9 @@ class login extends StatelessWidget {
     var _bottomHight = 0.0;
     if (Platform.isAndroid) {
       debugPrint("1");
-      _bottomHight = MediaQuery.of(context).size.height - 260;
+      _bottomHight = MediaQuery.of(context).size.height - 310;
     } else {
-      _bottomHight = MediaQuery.of(context).size.height - 330;
+      _bottomHight = MediaQuery.of(context).size.height - 380;
     }
     return _bottomHight;
   }
@@ -45,29 +46,8 @@ class login extends StatelessWidget {
           new Container(
             decoration: new BoxDecoration(
               image: new DecorationImage(
-                  image: new AssetImage('images/bg-denglu.png'),
+                  image: new AssetImage('images/bg-denglux1.png'),
                   fit: BoxFit.fitWidth),
-            ),
-            child: Column(
-              children: <Widget>[
-                new Container(
-                  height: 84,
-                  alignment: Alignment.center,
-                  margin: const EdgeInsets.only(
-                    top: 110,
-                  ),
-                  child: new Text(
-                    '收啦商家端',
-                    style: new TextStyle(
-                      fontSize: 36,
-                      color: Colors.white,
-                      fontFamily: 'PingFang',
-                      letterSpacing: 4.0,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
-              ],
             ),
           ),
           new CustomScrollView(
@@ -80,11 +60,10 @@ class login extends StatelessWidget {
                     <Widget>[
                       //输入框开始
                       new Container(
-                        margin: EdgeInsets.only(top: getBottomHight(context)),
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
                           children: <Widget>[
                             new Container(
+                              padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.55),
                               child: Column(
                                 children: <Widget>[
                                   new Container(
@@ -130,7 +109,7 @@ class login extends StatelessWidget {
                                       ],
                                     ),
                                   ),
-                                  Container(
+                                  new Container(
                                     width: MediaQuery.of(context).size.width,
                                     child: Row(
                                       children: <Widget>[
@@ -180,11 +159,14 @@ class login extends StatelessWidget {
                             new Container(
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: <Widget>[
                                   //登陆按钮开始
                                   Container(
                                     width:
-                                        MediaQuery.of(context).size.width - 20,
+                                        MediaQuery.of(context).size.width * .85,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.07,
                                     margin:
                                         EdgeInsets.only(top: 20, bottom: 10),
                                     child: RaisedButton(
@@ -207,20 +189,20 @@ class login extends StatelessWidget {
                                         '登  录',
                                         style: TextStyle(
                                           color: Colors.black,
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           fontFamily: "PingFangSC-Regular",
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
-                                      padding:
-                                          EdgeInsets.fromLTRB(160, 10, 160, 10),
                                     ),
                                   ),
                                   //登陆按钮结束
                                   //注册按钮开始
                                   Container(
-                                    width:
-                                        MediaQuery.of(context).size.width - 20,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.85,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.07,
                                     margin:
                                         EdgeInsets.only(top: 10, bottom: 10),
                                     child: RaisedButton(
@@ -243,17 +225,31 @@ class login extends StatelessWidget {
                                         '注  册',
                                         style: TextStyle(
                                           color: Colors.black,
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           fontFamily: "PingFangSC-Regular",
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
-                                      padding:
-                                          EdgeInsets.fromLTRB(160, 10, 160, 10),
                                     ),
                                   ),
                                   //注册按钮结束
                                 ],
+                              ),
+                            ),
+                            new Container(
+                              width: 100,
+                              child: new IconButton(
+                                icon: Text(
+                                  '忘记密码',
+                                  style: TextStyle(
+                                      color:
+                                          Color.fromRGBO(255, 255, 255, 0.54),
+                                      fontFamily: "PingFangSC-Regular",
+                                      fontSize: 18),
+                                ),
+                                onPressed: () {
+                                  debugPrint("2");
+                                },
                               ),
                             ),
                             //按钮结束

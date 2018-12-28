@@ -191,8 +191,11 @@ class sign2 extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 90),
-                    alignment: Alignment.center,
+                    color: Colors.white,
+                    width: MediaQuery.of(context).size.width * 0.85,
+                    height: MediaQuery.of(context).size.height * 0.07,
+                    margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.11),
                     child: RaisedButton(
                       onPressed: () {
                         //todo 注册方法
@@ -202,12 +205,11 @@ class sign2 extends StatelessWidget {
                       ),
                       elevation: 2.0,
                       color: Color.fromRGBO(255, 239, 63, 1),
-                      padding: EdgeInsets.fromLTRB(165, 15, 165, 15),
                       child: Text(
                         '注册',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 22,
+                          fontSize: 18,
                         ),
                       ),
                     ),
